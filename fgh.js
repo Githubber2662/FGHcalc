@@ -1,5 +1,5 @@
 // Calculates f_{func}(base)
-function fgh(array, base)
+function fgh(array, base, it)
 {
   base = new MetaNum(base);
 if(array.length == 1) {
