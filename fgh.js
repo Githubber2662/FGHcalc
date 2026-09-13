@@ -1,21 +1,21 @@
 // Calculates f_{func}(base)
-function fgh(func, base)
+function fgh(array, base)
 {
-  base = ExpantaNum(base);
-
-  if (func == 0)
+  base = new MetaNum(base);
+if(array.length == 1) {
+  if (array[0] == 0)
   {
     return base.add(1);
   }
-  else if (func == 1)
+  else if (array[0] == 1)
   {
     return base.mul(2);
   }
-  else if (func == 2)
+  else if (array[0] == 2)
   {
-    return base.mul(ExpantaNum.pow(2, base));
+    return base.mul(MetaNum.pow(2, base));
   }
-  else if (func == 3)
+  else if (array[0] == 3)
   {
     let reps = base;
     while (reps.gt(0))
@@ -40,7 +40,7 @@ function fgh(func, base)
     {
       if (base.lt(1e100))
       {
-        base = fgh(func - 1, base)
+        base = fgh([array[0] - 1], base)
         reps = reps.sub(1)
       }
       else
@@ -60,7 +60,7 @@ function fgh(func, base)
     return base;
   }
 }
-
+}
 // Calculates f_ω(base)
 function fghOmega(base)
 {
